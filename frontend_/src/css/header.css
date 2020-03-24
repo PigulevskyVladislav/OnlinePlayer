@@ -1,0 +1,18 @@
+@import "vars.css";
+
+header {
+    width: 100%;
+    background: var(--blue);
+    color: var(--yellow);
+    height: 10vh;
+    padding-bottom: 15px;
+    flex: 0 0 auto;
+}
+
+header .logo{
+    width: 8vh;
+    height: 8vh;
+    margin-top: 2vh;
+    margin-left: 3vh;
+}
+
