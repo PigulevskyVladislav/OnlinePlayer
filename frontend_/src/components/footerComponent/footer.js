@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
 
-import PlayButton from './footerButtons/play_button';
-import MixButton from './footerButtons/mix_button';
-import PrevButton from './footerButtons/prev_button';
-import NextButton from './footerButtons/next_button';
-import RepButton from './footerButtons/rep_button';
+import PlayButton from './components/play_button';
+import MixButton from './components/mix_button';
+import PrevButton from './components/prev_button';
+import NextButton from './components/next_button';
+import RepButton from './components/rep_button';
+import VolumeSlider from './components/vol_slider';
+import ProgressBar from './components/prog_bar';
 
 class Footer extends Component{
  render() {
@@ -12,20 +14,32 @@ class Footer extends Component{
     <footer>
       <div className="navigatePanel">
         
-        <MixButton />
+        <MixButton randomOrder={this.props.randomOrder}
+        />
 
-        <PrevButton />
+        <PrevButton playPrev={this.props.playPrev}
+        /> 
 
-        <PlayButton />
+        <PlayButton playSong={this.props.playSong}
+                    pauseSong={this.props.pauseSong}
+                    is_play={this.props.is_play}
+        />
 
-        <NextButton />
+        <NextButton playNext={this.props.playNext}
+        />
 
-        <RepButton />
+        <RepButton loopList={this.props.loopList}
+        />
 
+        <VolumeSlider changeVolume={this.props.changeVolume}
+        />
+        
       </div>
 
       <div className="progressPanel">
-        <div className="progressBar"></div>
+        <ProgressBar changeProgress={this.props.changeProgress}
+                     progress={this.props.progress}
+        />
       </div>
     </footer>
   );

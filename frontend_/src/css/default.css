@@ -13,7 +13,9 @@ body {
 }
 
 .app {
-    display: flex;
-    flex-direction: column;
+    /*display: flex;*/
+    /*flex-direction: column;*/
+    position: relative;
+    overflow: hidden;
     height: 100vh;
 }

@@ -1,26 +1,32 @@
 @import "vars.css";
 
 footer {
-    display: flex;
+    /*display: flex;*/
+    /*order: 2;*/
+    /*margin-bottom: auto;*/
+    /*flex: 0 0 auto;*/
+    position: absolute;
+    bottom: 0;
+    left: 0;
     flex-direction: column;
     width: 100%;
-    height: 18vh;
+    /*height: 18vh;*/
     background: var(--blue);
     color: var(--red);
-    order: 2;
-    margin-bottom: auto;
-    flex: 0 0 auto;
 }
 
 .navigatePanel {
+    position: relative;
+    height: 13vh;
     display: flex;
     flex-direction: row;
     justify-content: center;
-    height: 13vh;
-    align-content: space-between;
+    align-items: center;
+    /*align-content: space-between;*/
 }
 
 .progressPanel {
+    height: 13vh;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -30,46 +36,82 @@ footer {
 .navigatePanel .playButton img {
     width: 10vh;
     height: 10vh;
-    margin-top: 2vh;
-    margin-left: 10px;
+    position: relative; 
+    top: 1.5vh;
+    /* position: relative; 
+    top: 0.5vh;
     align-self: center;
+    margin: 0; */
     
 }
 
 .navigatePanel .nextButton img {
     width: 5vh;
     height: 5vh;
+    position: relative; 
+    top: 1.5vh;
+    margin-left: 3vh;
+    /* position: relative;
+    top: -1vh;
     margin-top: 4.25vh;
     margin-left: 10px;
-    align-self: center;
+    align-self: center; */
 }
 
 .navigatePanel .prevButton img {
     width: 5vh;
     height: 5vh;
-    margin-top: 4.25vh;
+    position: relative; 
+    top: 1.5vh;
+    margin-right: 3vh;
+    /* margin-top: 4.25vh;
     margin-left: 10px;
-    align-self: center;
+    align-self: center; */
 }
 
 .navigatePanel .mixButton img {
     width: 5vh;
     height: 5vh;
-    margin-top: 7vh;
-    margin-left: 10px;
+    position: relative; 
+    top: 3.5vh;
+    margin-right: 6vh;
+    /* margin-top: 7vh;
+    margin-left: 10px; */
 }
 
 .navigatePanel .repButton img {
     width: 5vh;
     height: 5vh;
-    margin-top: 7vh;
-    margin-left: 10px;
+    position: relative; 
+    top: 3.5vh;
+    margin-left: 6vh;
+    /* margin-top: 7vh;
+    margin-left: 10px; */
 }
 
-.progressPanel .progressBar {
-    width: 80%;
+.navigatePanel .volSlider input {
+    width: 10vh;
+    height: 0.5vh;
+    position: absolute;
+    top: 5vh;
+    right: 5vh;
+    background: var(--red);
+    color: var(--red);
+}
+
+.progressPanel progress[value] {
+    -webkit-appearance: none;
+    appearance: none;
+
+    width: 84%;
+    left: 8%;
+    right: 8%;
+    position: absolute;
     height: 0.9vh;
-    background: var(--yellow);
     margin-top: 2vh;
     margin-bottom: 10px;
+}
+
+.progressPanel progress[value]::-webkit-progress-value {
+    background-color: var(--yellow);
 }

@@ -2,28 +2,36 @@
 
 
 .musicList {
-    order: 1;
-    height: 100vh;
-    flex-grow: 1;
-    background: var(--yellow);
-    display: block;
-    flex: 1 1 auto;
-    position: relative;/* need this to position inner content */
+    /*order: 1;*/
+    /*flex-grow: 1;*/
+    /*display: block;*/
+    /*flex: 1 1 auto;*/
+    /*position: relative;/* need this to position inner content */
+    /*height: 100%;*/
     overflow-y: auto;
+    position: absolute;
+    bottom: 18vh;
+    top: 12vh;
+    width: 100%;
+    background: var(--yellow);
+}
+
+.musicList ul {
+    padding: 0;
+    margin: 0;
 }
 
 .musicBlock {
     background: var(--red);
     color: var(--blue);
-    margin-left: 0;
+    position: relative;
     margin-right: 8vh;
-    padding-left: 0;
+    margin-left: 8vh;
+    padding-left: 0; 
 }
 
 .musicBlock h1 {
     font-size: 22px;
-    margin-left: 0;
-    padding-left: 0;
 }
 
 .musicBlock a {

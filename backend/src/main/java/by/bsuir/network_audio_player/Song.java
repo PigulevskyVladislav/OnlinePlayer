@@ -10,9 +10,9 @@ public class Song {
     private String id;
     private String name;
 
-    public Song(String id_, String name_) {
-        id = id_;
-        name = name_;
+    public Song(String id, String name) {
+        this.id = id;
+        this.name = name;
     }
 
     @Override
@@ -20,7 +20,7 @@ public class Song {
         if (this == s) return true;
         if (s == null || getClass() != s.getClass()) return false;
         Song song = (Song) s;
-        return (id == song.id) && (name == song.name);
+        return hashCode() == song.hashCode();
     }
 
     @Override

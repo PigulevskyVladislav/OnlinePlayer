@@ -3,36 +3,45 @@ import React, { Component } from 'react';
 import MusicBlock from './music_block';
 
 class MusicList extends Component{
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
 
     this.state = {
-      'items': []
-    }
+      items: [],
+     };
   }
-  componentDidMount() {
-    this.getItems();
-  }
-  getItems() {
-    fetch('/123')
-      .then(results => results.json())
-      .then(results => this.setState({'items': results}));
-  }
+
+ getLength = () => {
+   
+ }
+
  render() {
   return (
     <div className="musicList">
-        <ul>
-          {this.state.items.map(function(item, index) {
-            return(
-              <MusicBlock key = {index} 
-              name = {item.name} id = {item.id} />
-            )
-          }
-          )}
-        </ul>
+        <SongList items={this.props.items}
+                  playSong={this.props.playSong}
+                  setIndex={this.props.setIndex} 
+        />
     </div>
   );
  }
 }
 
 export default MusicList;
+
+function SongList(props) {
+    const items = props.items;
+    const listSongs = items.map((song, song_index) =>
+        <MusicBlock key={song.id} 
+                    index={song_index}
+                    name={song.name} 
+                    id={song.id} 
+                    playSong={props.playSong}
+                    setIndex={props.setIndex}            
+        />
+        );
+    return (
+      <div id="scroll_div">
+        <ul>{listSongs}</ul>
+      </div>);
+}

@@ -23,7 +23,6 @@ import java.security.GeneralSecurityException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-import java.util.concurrent.ExecutionException;
 
 import org.json.simple.JSONObject;
 import org.json.simple.JSONArray;
@@ -73,26 +72,39 @@ public class GoogleDriveConnection {
                 .setApplicationName(APPLICATION_NAME)
                 .build();
 
-        // Print the names and IDs for up to 10 files.
+        //Get folder's id by name
+        String music_folder_id = "";
+        String query = "mimeType='application/vnd.google-apps.folder' and name='MyMusic'";
 
-        //String query = " mimeType != 'application/vnd.google-apps.folder' and 'MyMusic' in parents";
-        String query = "mimeType!='application/vnd.google-apps.folder' and '1qC8h55iui8OKWg5w1vZK7N8QOCbpPvME' in parents";
-
-        FileList result = service.files().list()
-                .setPageSize(10)
+        FileList result_music_folder = service.files().list()
+                .setPageSize(1)
                 .setQ(query)
-                .setOrderBy("name")
-                .setFields("nextPageToken, files(id, name)")
-                //.setFields("*")
+                .setFields("nextPageToken, files(id)")
                 .execute();
-        List<File> files = result.getFiles();
+        List<File> music_folder = result_music_folder.getFiles();
+
         List<Song> songs = null;
-        if (!(files == null || files.isEmpty())) {
-            songs = new ArrayList<Song>();
-            for (File file : files) {
-                songs.add(new Song(file.getId(), file.getName()));
+
+        if (!(music_folder == null || music_folder.isEmpty())) {
+            music_folder_id = music_folder.get(0).getId();
+
+            // Print the names and IDs of files.
+            query = "mimeType!='application/vnd.google-apps.folder' and '" + music_folder_id + "' in parents";
+
+            FileList result = service.files().list()
+                    .setQ(query)
+                    .setOrderBy("name")
+                    .setFields("nextPageToken, files(id, name)")
+                    .execute();
+            List<File> files = result.getFiles();
+            if (!(files == null || files.isEmpty())) {
+                songs = new ArrayList<Song>();
+                for (File file : files) {
+                    songs.add(new Song(file.getId(), file.getName()));
+                }
             }
         }
+
         return songs;
     }
 

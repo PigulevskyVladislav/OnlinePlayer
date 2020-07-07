@@ -25,19 +25,19 @@
 		<dependency>
 			<groupId>com.google.api-client</groupId>
 			<artifactId>google-api-client</artifactId>
-			<version>1.25.0</version>
+			<version>1.30.9</version>
 		</dependency>
 
 		<dependency>
 			<groupId>com.google.oauth-client</groupId>
 			<artifactId>google-oauth-client-jetty</artifactId>
-			<version>1.25.0</version>
+			<version>1.30.6</version>
 		</dependency>
 
 		<dependency>
 			<groupId>com.google.apis</groupId>
 			<artifactId>google-api-services-drive</artifactId>
-			<version>v3-rev188-1.25.0</version>
+			<version>v3-rev197-1.25.0</version>
 		</dependency>
 
 		<!-- spring mvc, rest -->
@@ -46,18 +46,18 @@
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
 
-		<!-- servlet
+		<!-- https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api -->
 		<dependency>
 			<groupId>javax.servlet</groupId>
-			<artifactId>servlet-api</artifactId>
-			<version>2.5</version>
+			<artifactId>javax.servlet-api</artifactId>
+			<version>4.0.1</version>
 			<scope>provided</scope>
 		</dependency>
 		<dependency>
-			<groupId>org.apache.santuario</groupId>
+				<groupId>org.apache.santuario</groupId>
 			<artifactId>xmlsec</artifactId>
-			<version>2.1.4</version>
-		</dependency>-->
+			<version>2.2.0</version>
+		</dependency>
 
 		<!-- json simple -->
 		<dependency>
@@ -93,7 +93,7 @@
 		<dependency>
 			<groupId>org.apache.httpcomponents</groupId>
 			<artifactId>httpclient</artifactId>
-			<version>4.5.8</version>
+			<version>4.5.12</version>
 			<scope>test</scope>
 		</dependency>
 
@@ -119,7 +119,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-surefire-plugin</artifactId>
-				<version>2.22.2</version>
+				<version>3.0.0-M4</version>
 			</plugin>
 		</plugins>
 	</build>
