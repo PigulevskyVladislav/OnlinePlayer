@@ -12,7 +12,7 @@ class MusicBlock extends Component{
     <div className="musicBlock" 
          onClick={this.handleClick}>
          
-        <h1>{this.props.name}</h1> 
+        <b>{this.props.name}</b> 
     </div>
   );
  }

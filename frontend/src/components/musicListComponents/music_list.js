@@ -42,6 +42,6 @@ function SongList(props) {
         );
     return (
       <div id="scroll_div">
-        <ul>{listSongs}</ul>
+        {listSongs}
       </div>);
 }
