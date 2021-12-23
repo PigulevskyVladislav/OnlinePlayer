@@ -22,7 +22,16 @@
 .header .auth_btn{
     position: relative;
     margin-top: 2vh;
-    right: 5vh;
+    right: 3vh;
+    float: right;
+}
+
+.header .folderButton{
+    width: 6vh;
+    height: 6vh;
+    position: relative;
+    margin-top: 1vh;
+    right: 12vh;
     float: right;
 }
 

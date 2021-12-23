@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import ExplorerButton from './file_explorer_button'
 import GoogleLogin, {GoogleLogout} from 'react-google-login';
 import logo_ from '../../images/logo.png'
 
@@ -41,7 +42,9 @@ class Header extends Component{
     return (
       <div className="header">
         <img className="logo" src={logo_} alt="Logo"></img>
-        <button onClick={()=>this.props.toggleExplorer(true)} />
+
+        <ExplorerButton openPopup={()=>this.props.toggleExplorer(true)} />
+        
         {!this.state.isLoginState &&
         <GoogleLogin
           className="auth_btn"

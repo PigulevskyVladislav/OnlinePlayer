@@ -13,7 +13,8 @@ class App extends Component {
     super();
 
     this.state = {
-      is_file_explorer_turned: true
+      is_file_explorer_turned: false,
+      folder_name: ''
     };
 
     this.toggleFileExplorer = this.toggleFileExplorer.bind(this);
@@ -24,11 +25,18 @@ class App extends Component {
                     is_turns_on});
   }
 
+  changeFolderName = (new_folder_name) => {
+    this.setState({folder_name: 
+                    new_folder_name});
+  }
+
   render() {
     return (
       <div className="app">
         {this.state.is_file_explorer_turned && 
-          <FileExplorerPopup handleClose={this.toggleFileExplorer} />} 
+          <FileExplorerPopup handleClose={this.toggleFileExplorer} 
+                             changeFolder={this.changeFolderName}
+                             folder_name={this.state.folder_name}/>} 
 
         <Header toggleExplorer={this.toggleFileExplorer} />
 
