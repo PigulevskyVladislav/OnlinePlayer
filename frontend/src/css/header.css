@@ -1,6 +1,6 @@
 @import "vars.css";
 
-header {
+.header {
     position: relative;
     top: 0;
     left: 0;
@@ -12,10 +12,17 @@ header {
     /*flex: 0 0 auto;*/
 }
 
-header .logo{
+.header .logo{
     width: 8vh;
     height: 8vh;
     margin-top: 2vh;
     margin-left: 3vh;
+}
+
+.header .auth_btn{
+    position: relative;
+    margin-top: 2vh;
+    right: 5vh;
+    float: right;
 }
 
