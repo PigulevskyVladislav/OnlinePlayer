@@ -14,10 +14,30 @@ class App extends Component {
 
     this.state = {
       is_file_explorer_turned: false,
-      folder_name: ''
+      folder_name: '',
+      token_id: '',
+      isLoginState: false,
     };
 
     this.toggleFileExplorer = this.toggleFileExplorer.bind(this);
+  }
+
+  responseGoogle = (response) => {
+    console.log(response);
+    this.setState({token_id: response.tokenId,
+                   isLoginState: true});
+    console.log(this.state.token_id);
+  }
+
+  responseGoogleError = (response) => {
+    console.log('Error: ' + response.error);
+    alert('Authorization error');
+  }
+
+  logout = () => {
+    this.setState({token_id: '',
+                   isLoginState: false});
+    console.log(this.state.token_id);
   }
 
   toggleFileExplorer = (is_turns_on) => {
@@ -38,9 +58,13 @@ class App extends Component {
                              changeFolder={this.changeFolderName}
                              folder_name={this.state.folder_name}/>} 
 
-        <Header toggleExplorer={this.toggleFileExplorer} />
+        <Header responseGoogleError={this.responseGoogleError}
+                toggleExplorer={this.toggleFileExplorer} 
+                responseGoogle={this.responseGoogle}
+                logout={this.logout}
+                isLoginState={this.state.isLoginState}/>
 
-        <Player />
+        <Player isSongsRenderState={this.state.isLoginState && this.state.folder_name == 'MyMusic'}/>
 
       </div>
     );

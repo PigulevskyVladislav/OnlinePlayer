@@ -18,10 +18,11 @@ class MusicList extends Component{
  render() {
   return (
     <div className="musicList">
+        {this.props.isSongsRenderState && 
         <SongList items={this.props.items}
                   playSong={this.props.playSong}
-                  setIndex={this.props.setIndex} 
-        />
+                  setIndex={this.props.setIndex}
+        />}
     </div>
   );
  }

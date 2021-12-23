@@ -214,9 +214,9 @@ class Player extends Component{
       />
       
       <div>
-        <MusicList playSong={this.handlePlaySong}
+        <MusicList isSongsRenderState={this.props.isSongsRenderState}
+                   playSong={this.handlePlaySong}
                    setIndex={this.setIndex}
-
                    items={this.state.items}
         />
 
