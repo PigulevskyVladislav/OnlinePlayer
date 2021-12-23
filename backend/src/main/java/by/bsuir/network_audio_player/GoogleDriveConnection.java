@@ -14,6 +14,7 @@ import com.google.api.services.drive.Drive;
 import com.google.api.services.drive.DriveScopes;
 import com.google.api.services.drive.model.File;
 import com.google.api.services.drive.model.FileList;
+import com.google.gson.JsonObject;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -124,6 +125,60 @@ public class GoogleDriveConnection {
 
         } catch (Exception e) {
             System.out.println(e.getMessage());
+            JSONObject jo = new JSONObject();
+            jo.put("id", "1RY9uhp2RQCzzZn5wcahBKd2E9OegdspR");
+            jo.put("name", "Ляпис - Капитал.mp3");
+            result.add(jo);
+            
+            jo = new JSONObject();
+            jo.put("id", "125ZRzRa_9_eiCw_PhHo0udKzZ25g1fnv");
+            jo.put("name", "Ляпис - Манифест.mp3");
+            result.add(jo);
+
+            jo = new JSONObject();
+            jo.put("id", "1P7Wftr5ocWHJCyWe73aClOIBJbDDvzie");
+            jo.put("name", "Beep Beep Im a Sheep.m4a");
+            result.add(jo);
+            
+            jo = new JSONObject();
+            jo.put("id", "1Kr9ZDxkDcAzAoxfT3gk1ZlOxKlkMuQil");
+            jo.put("name", "De La Soul - Description.mp3");
+            result.add(jo);
+
+            jo = new JSONObject();
+            jo.put("id", "1xjFZDCD99m72Ni2HiE_FIbtV9mXphZyn");
+            jo.put("name", "fire_bow_sound-mike-koenig.mp3");
+            result.add(jo);
+
+            jo = new JSONObject();
+            jo.put("id", "1F37Y5PhEhmMSA-ixn1eNYsPCwCzoq_Zt");
+            jo.put("name", "Nightcore - Run.m4a");
+            result.add(jo);
+
+            jo = new JSONObject();
+            jo.put("id", "173KOdQ5L9hM701DIESnHZW0xnxkRjkoU");
+            jo.put("name", "Shantae.m4a");
+            result.add(jo);
+
+            jo = new JSONObject();
+            jo.put("id", "1zjq6Vm6Z0dZKU9fegct4jHCJvDVRLQRm");
+            jo.put("name", "Rottytops.m4a");
+            result.add(jo);
+
+            jo = new JSONObject();
+            jo.put("id", "1JE_LTD2SPx8XjIqDUPZULL2uo5GQyDTD");
+            jo.put("name", "Shoe-Egg.mp3");
+            result.add(jo);
+
+            jo = new JSONObject();
+            jo.put("id", "1yWJGi-PuuDd33ttbeS2W4xYaRYZZ_0op");
+            jo.put("name", "The Offspring-One Fine Day.mp3");
+            result.add(jo);
+
+            jo = new JSONObject();
+            jo.put("id", "18O-D1MSGy_5hUNm_IazPAks8tBfZzMz5");
+            jo.put("name", "The Offspring-The Kids Aren Alright.mp3");
+            result.add(jo);
         }
 
         return result;
