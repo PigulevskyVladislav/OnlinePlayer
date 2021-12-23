@@ -27,11 +27,11 @@
 }
 
 .header .folderButton{
-    width: 4vh;
-    height: 4vh;
+    width: 6vh;
+    height: 6vh;
     position: relative;
     margin-top: 1vh;
-    right: 10vh;
+    right: 12vh;
     float: right;
 }
 
